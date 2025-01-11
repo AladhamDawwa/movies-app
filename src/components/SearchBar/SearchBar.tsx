@@ -43,7 +43,7 @@ const SearchBar = () => {
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search for a movie..."
+        placeholder="Search..."
       />
       <button type="submit">
         <span className="text-2xl">
