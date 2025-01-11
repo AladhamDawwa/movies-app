@@ -5,12 +5,12 @@ import styles from "./page.module.scss";
 import { FaSearch } from "react-icons/fa";
 
 export default async function SearchPage({
-  params,
+  searchParams,
 }: {
-  params: { query: string };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   let movies: Movie[] = [];
-  const { query } = await params;
+  const { query } = (await searchParams) as { query: string };
   try {
     const response = await searchMovies(query);
     movies = response.results;
