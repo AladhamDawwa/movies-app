@@ -1,5 +1,7 @@
 .header {
   display: flex;
+  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
   padding: 1rem 2rem;
   height: 5rem;
@@ -9,7 +11,6 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  gap: 3rem;
 }
 
 .logo {
@@ -18,7 +19,7 @@
   font-weight: bold;
 
   img {
-    height: 4rem;
+    height: 4%;
     width: 4rem;
     padding-bottom: 0.5rem;
     filter: invert(1);
