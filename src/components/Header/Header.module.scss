@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 5rem;
+  background: rgba(27, 3, 3, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+}
+
+.logo {
+  margin-right: auto;
+  font-size: 1.75rem;
+  font-weight: bold;
+
+  img {
+    padding-bottom: 0.5rem;
+    filter: invert(1);
+  }
+}
+
+.favIcon {
+  padding: 0.6rem;
+  font-size: 1.4rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: crimson;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}

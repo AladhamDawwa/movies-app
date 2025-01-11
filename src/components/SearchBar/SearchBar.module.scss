@@ -1,0 +1,23 @@
+.search {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  min-width: calc(100% - 20rem);
+  transition: background-color 0.3s ease;
+
+  input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #ffffff;
+    width: 100%;
+    transition: width 0.3s ease;
+
+    &::placeholder {
+      color: #ffffff;
+      opacity: 0.4;
+    }
+  }
+}
