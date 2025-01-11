@@ -6,11 +6,11 @@ import { Movie } from "@/types/movie";
 import { fetchMovieDetails } from "@/lib/tmdb";
 
 export default async function MovieDetailPage({
-  searchParams,
+  params,
 }: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  params: Promise<{ id: string }>;
 }) {
-  const movieId = (await searchParams).id as string;
+  const movieId = (await params).id;
   let movie: Movie | null = null;
   try {
     movie = await fetchMovieDetails(movieId);
