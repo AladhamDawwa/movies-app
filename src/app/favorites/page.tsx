@@ -3,11 +3,13 @@ import { Loader, MovieCard } from "@/components";
 import styles from "./favorites.module.scss";
 import { useFavoritesStore } from "@/store/favoritesStore";
 import { FaHeart } from "react-icons/fa";
+import useIsMounted from "@/hooks/useIsMounted";
 
 export default function FavoritesPage() {
   const { favorites } = useFavoritesStore();
+  const isMounted = useIsMounted();
 
-  if (favorites === null) return <Loader />;
+  if (!isMounted) return <Loader />;
 
   if (favorites.length === 0)
     return <h2 className={styles.noMovies}>No favorites yet!</h2>;

@@ -3,16 +3,13 @@ import { useFavoritesStore } from "@/store/favoritesStore";
 import styles from "./FavoriteButton.module.scss";
 import { Movie } from "@/types/movie";
 import { FaHeart } from "react-icons/fa";
-import { useState, MouseEvent, useEffect } from "react";
+import { useState, MouseEvent } from "react";
+import useIsMounted from "@/hooks/useIsMounted";
 
 const FavoriteButton = ({ movie }: { movie: Movie }) => {
   const { addFavorite, removeFavorite, isFavorite } = useFavoritesStore();
   const [isAnimating, setIsAnimating] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const isMounted = useIsMounted();
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
