@@ -1,0 +1,14 @@
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.loadMore {
+  margin: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #f4f4f4;
+  color: black;
+}

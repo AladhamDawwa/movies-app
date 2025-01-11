@@ -5,6 +5,7 @@ import Hero from "./Hero/Hero";
 import Loader from "./Loader/Loader";
 import MovieCard from "./MovieCard/MovieCard";
 import SearchBar from "./SearchBar/SearchBar";
+import SearchResults from "./SearchResults/SearchResults";
 
-export { ErrorComponent, FavoriteButton, Header, Hero, Loader, MovieCard, SearchBar };
+export { ErrorComponent, FavoriteButton, Header, Hero, Loader, MovieCard, SearchBar, SearchResults };
 

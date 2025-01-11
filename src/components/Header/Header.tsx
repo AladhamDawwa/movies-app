@@ -9,7 +9,13 @@ const Header = () => {
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
         <div className="flex items-center">
-          <Image src="/icon.svg" alt="MovieApp Logo" width={60} height={60} />
+          <Image
+            src="/icon.svg"
+            alt="MovieApp Logo"
+            width={60}
+            height={60}
+            priority
+          />
           <span className="hidden md:inline">MovieApp</span>
         </div>
       </Link>

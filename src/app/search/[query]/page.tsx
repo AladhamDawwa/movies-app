@@ -1,24 +1,13 @@
-import { MovieCard } from "@/components";
+import { SearchResults } from "@/components";
 import { searchMovies } from "@/lib/tmdb";
-import { Movie } from "@/types/movie";
-import styles from "./page.module.scss";
 import { FaSearch } from "react-icons/fa";
+import styles from "./page.module.scss";
 
-export default async function SearchPage({
-  params,
-}: {
-  params: Promise<{ query: string }>;
-}) {
-  let movies: Movie[] = [];
+const page = async ({ params }: { params: Promise<{ query: string }> }) => {
   const { query } = await params;
-  try {
-    const response = await searchMovies(query);
-    movies = response.results;
-  } catch (error) {
-    console.error("Failed to fetch movies:", error);
-  }
+  const movies = await searchMovies(query);
 
-  return movies.length === 0 ? (
+  return movies.results.length === 0 ? (
     <div className={styles.noMovies}>
       <h2>No movies found</h2>
     </div>
@@ -28,11 +17,8 @@ export default async function SearchPage({
         <FaSearch />
         Search results for &apos;{decodeURIComponent(query)}&apos;
       </h2>
-      <div className={styles.movieGrid}>
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div>
+      <SearchResults initialMovies={movies} query={query} />
     </>
   );
-}
+};
+export default page;

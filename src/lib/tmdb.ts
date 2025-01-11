@@ -8,10 +8,6 @@ export const fetchTMDB = async (endpoint: string, queryParams: Record<string, st
   const params = new URLSearchParams({ ...queryParams, api_key: API_Key! });
   const url = `${BASE_URL}${endpoint}?${params.toString()}`;
   const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`TMDB API Error: ${response.statusText}`);
-  }
-
   return response.json();
 };
 
@@ -23,6 +19,6 @@ export const fetchMovieDetails = async (movieId: string): Promise<Movie> => {
   return fetchTMDB(`/movie/${movieId}`, { append_to_response: "credits" });
 };
 
-export const searchMovies = async (query: string, page: number = 1) => {
+export const searchMovies = async (query: string, page: number = 1): Promise<APIResponse<Movie>> => {
   return fetchTMDB(`/search/movie`, { query, page });
 };

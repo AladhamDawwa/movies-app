@@ -8,7 +8,7 @@ const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState("");
   const router = useRouter();
-  const pathname = usePathname(); // Get the current path name
+  const pathname = usePathname();
 
   useEffect(() => {
     if (pathname.includes("search")) {
