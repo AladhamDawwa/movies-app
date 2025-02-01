@@ -15,6 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:title" content="Movies-app"></meta>
+        <meta property="og:description" content="Adhoom's movie app."></meta>
+        <meta property="og:image" content="./public/hero-bg.jpg"></meta>
+        {/* <meta property="og:url" content=""></meta> */}
+        <meta property="og:type" content="website"></meta>
+      </head>
       <body>
         <Header />
         {children}
